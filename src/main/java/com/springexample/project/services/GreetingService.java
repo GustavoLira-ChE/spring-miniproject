@@ -9,6 +9,6 @@ public class GreetingService {
     }
 
     public String getGretting(String name){
-        return this.greeting + name;
+        return this.greeting + " " + name;
     }
 }
