@@ -1,13 +1,19 @@
 package com.springexample.project.services;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class TimeService {
     
-    public TimeService(){
+    private final Boolean isTomorrow;
+    public TimeService(Boolean isTommorow){
+        this.isTomorrow = isTommorow;
     }
 
-    public LocalDateTime getDateForGreeting(){
-        return LocalDateTime.now();
+    public LocalDate getDateForGreeting(){
+        if(isTomorrow){
+            return LocalDate.now();
+        } else{
+            return LocalDate.now().plusDays(1);
+        }
     }
 }
