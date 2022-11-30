@@ -2,11 +2,15 @@ package com.springexample.project.services;
 
 import java.time.LocalDate;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
 public class TimeService {
     
-    private final Boolean isTomorrow;
-    public TimeService(Boolean isTommorow){
-        this.isTomorrow = isTommorow;
+    @Value("#{new Boolean(environment['spring.profiles.active'] != 'dev')}")
+    private Boolean isTomorrow;
+    public TimeService(){
     }
 
     public LocalDate getDateForGreeting(){
