@@ -2,16 +2,19 @@ package com.springexample.project.services;
 
 public class OutputService {
     
-    private GreetingService greetingService;
-    private TimeService timeService;
+    private final String name;
 
-    public OutputService(GreetingService greetingService, TimeService timeService) {
+    private final GreetingService greetingService;
+    private final TimeService timeService;
+
+    public OutputService(GreetingService greetingService, TimeService timeService, String name) {
         this.greetingService = greetingService;
         this.timeService = timeService;
+        this.name = name;
     }
 
-    public String getFullGreeting(String name){
-        return greetingService.getGretting(name) + timeService.getDateForGreeting().toString();
+    public String getFullGreeting(){
+        return greetingService.getGretting(this.name) + " " + timeService.getDateForGreeting().toString();
     }
 
     
