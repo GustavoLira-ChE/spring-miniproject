@@ -14,7 +14,7 @@ public class ProjectApplication {
 		OutputService outputService = context.getBean(OutputService.class);
 
 		for(int i = 0; i <= 5; i++){
-			System.out.println(outputService.getFullGreeting("Frank"));
+			System.out.println(outputService.getFullGreeting());
 			Thread.sleep(5000);
 		}
 		((AnnotationConfigApplicationContext)context).close();
