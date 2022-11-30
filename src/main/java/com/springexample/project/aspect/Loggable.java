@@ -1,4 +1,4 @@
-package com.springexample.aspect;
+package com.springexample.project.aspect;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
